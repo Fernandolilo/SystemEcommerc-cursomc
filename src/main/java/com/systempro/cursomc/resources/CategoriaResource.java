@@ -15,16 +15,16 @@ import com.systempro.cursomc.services.CategoriaService;
 // class de controle REST
 @RestController
 @RequestMapping(value = "/categorias")
-public class CategoriaResource { 
-	
+public class CategoriaResource {
+
 	@Autowired
 	private CategoriaService service;
- 
-	@RequestMapping(value= "/{id}",method = RequestMethod.GET)
-	public ResponseEntity<Optional<Categoria>> finid(@PathVariable Integer id) {
-		Optional<Categoria> obj = service.find(id);		
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Optional<Categoria>> find(@PathVariable Integer id) {
+		Optional<Categoria> obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
-		
+
 	}
 
 }
