@@ -11,7 +11,6 @@ import com.systempro.cursomc.services.excepitions.ObjectNotFoundException;
 
 
 
-
 //implementa o tratamento do serviço
 @Service
 public class CategoriaService {
