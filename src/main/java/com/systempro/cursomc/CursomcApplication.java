@@ -72,7 +72,7 @@ public class CursomcApplication implements CommandLineRunner {
 		Categoria cat1 = new Categoria(null, "Informatica");
 		Categoria cat2 = new Categoria(null, "Escritorio");
 
-		Produto p1 = new Produto(null, "Computador", 200.00);
+		Produto p1 = new Produto(null, "Computador", 2000.00);
 		Produto p2 = new Produto(null, "Impressora", 800.00);
 		Produto p3 = new Produto(null, "Mouse", 80.00);
 
@@ -117,7 +117,7 @@ public class CursomcApplication implements CommandLineRunner {
 		Pedido ped1 = new Pedido(null, sdf.parse("20/03/2021 01:10"), cli1, e1);
 		Pedido ped2 = new Pedido(null, sdf.parse("21/03/2021 01:15"), cli1, e2);
 		
-		Pagamento pagto1 = new  PagamentoComCartao(null, EstadoPagamento.QUITTADO, ped1, 6);
+		Pagamento pagto1 = new  PagamentoComCartao(null, EstadoPagamento.QUITADO, ped1, 6);
 		ped1.setPagamento(pagto1);
 		
 		Pagamento pagto2 = new  PagamentoComBoleto(null, EstadoPagamento.PENDETE, ped2, sdf.parse("21/03/2021 01:23"), null);

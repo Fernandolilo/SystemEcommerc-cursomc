@@ -3,7 +3,7 @@ package com.systempro.cursomc.domain.enums;
 public enum EstadoPagamento {
 	
 	PENDETE(1, "Pendente"),
-	QUITTADO(2, "Quitado"),
+	QUITADO(2, "Quitado"),
 	CANCELADO(3, "Cancelado");
 
 	private Integer cod;
