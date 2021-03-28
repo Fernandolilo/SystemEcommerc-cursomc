@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.systempro.cursomc.domain.Categoria;
 import com.systempro.cursomc.domain.Pedido;
-import com.systempro.cursomc.domain.dto.CategoriaDTO;
 import com.systempro.cursomc.services.PedidoService;
 
 // class de controle REST
