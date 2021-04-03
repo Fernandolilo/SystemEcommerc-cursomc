@@ -20,6 +20,7 @@ import com.systempro.cursomc.domain.PagamentoComCartao;
 import com.systempro.cursomc.domain.Pedido;
 import com.systempro.cursomc.domain.Produto;
 import com.systempro.cursomc.domain.enums.EstadoPagamento;
+import com.systempro.cursomc.domain.enums.Perfil;
 import com.systempro.cursomc.domain.enums.TipoCliente;
 import com.systempro.cursomc.domain.repositories.CategoriaRepository;
 import com.systempro.cursomc.domain.repositories.CidadeRepository;
@@ -124,17 +125,24 @@ public class DBService {
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 		
-		Cliente cli1 = new Cliente(null, "Fernando Silva", "fernando.nandotania@hotmail.com", "12312312311", TipoCliente.PESSOAFISICA, bCryptPasswordEncoder.encode("1234"));
+		Cliente cli1 = new Cliente(null, "Fernando Silva", "fernando.nandotania@hotmail.com", "31105899071", TipoCliente.PESSOAFISICA, bCryptPasswordEncoder.encode("1234"));
 		cli1.getTelefones().addAll(Arrays.asList("1231-2311", "4444-5555"));
 	  
+		Cliente cli2 = new Cliente(null, "Tania Oliveira", "fernando.sistempro@hotmail.com", "31105899071", TipoCliente.PESSOAFISICA, bCryptPasswordEncoder.encode("1234"));
+		cli2.getTelefones().addAll(Arrays.asList("1231-2311", "4444-5555"));
+		cli2.addPerfil(Perfil.ADMIN);
+		
 		Endereco e1 = new Endereco(null, "Rua flor", "13", "apto15", "Cidade Líder", "12345-000", cli1, c1);
 		Endereco e2 = new Endereco(null, "Rua Silva e Silva", "26", "sala 800", "Itaquera", "45612-000", cli1, c2);
-	
+		Endereco e3 = new Endereco(null, "Rua Serra de Botucatu", "26", "sala 800", "Tatuapé", "45612-000", cli2, c2);
+		
+		
 		cli1.getEnderecos().addAll(Arrays.asList(e1,e2));
+		cli2.getEnderecos().addAll(Arrays.asList(e3));
 		
-		clienteRepository.saveAll(Arrays.asList(cli1));
+		clienteRepository.saveAll(Arrays.asList(cli1, cli2));
 		
-		enderecoRepository.saveAll(Arrays.asList(e1, e2));
+		enderecoRepository.saveAll(Arrays.asList(e1, e2, e3));
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		
