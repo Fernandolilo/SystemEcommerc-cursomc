@@ -24,13 +24,16 @@ public class PedidoResource {
 
 	@Autowired
 	private PedidoService service;
-
+	
+	
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Optional<Pedido>> find(@PathVariable Integer id) {
 		Optional<Pedido> obj = Optional.of(service.find(id));
 		return ResponseEntity.ok().body(obj);
 
 	}
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> insert(@Valid @RequestBody Pedido obj){		
 		obj = service.insert(obj);
