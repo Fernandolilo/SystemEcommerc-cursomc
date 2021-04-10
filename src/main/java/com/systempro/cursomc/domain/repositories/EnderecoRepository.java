@@ -10,5 +10,7 @@ import com.systempro.cursomc.domain.Endereco;
 //interfaca de acesso a dados
 @Repository
 public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
+	
+	
 
 }
